@@ -1,0 +1,81 @@
+.add {
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}
+
+.edit {
+    border: #000 solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.check {
+    text-decoration: line-through;
+}
+
+.list {
+    padding-top: 10px;
+}
+
+
+.editList {
+    border: 0;
+    background-color: rgb(212,101,101);
+    color: #fff;
+    padding: 10px;
+}
+
+.removeList {
+    border: 0;
+    background-color: rgb(212,101,101);
+    color: #fff;
+    padding: 10px;
+}
+
+.todoList {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.item {
+    flex:1;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border-left:5px solid #0066ff;
+    background-color: #99ccff;
+}
+
+button {
+    float: right;
+}
+
+.list-item button {
+    margin-right: 5px;
+}
+
+.list-item ul {
+    flex:1;
+    list-style: none;
+    
+}
+
+.list-item .list-button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
