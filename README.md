@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# React 實作 To-do list
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## To-do list首頁
 
-## Available Scripts
+![GITHUB](https://raw.githubusercontent.com/willy199710/React_todolist/main/picture/To-do-list.PNG,"首頁")
 
-In the project directory, you can run:
+## 新增內容
 
-### `npm start`
+![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/add_item.PNG,"新增")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+使用 React.Modal 做彈出式視窗，並以useState hook 控制 Modal 的顯示開關
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+//index.js
+    <Modal show = {show}>
+        <Modal.Header>
+            <Modal.Title>
+                    新增記事內容
+            </Modal.Title>
+            <CloseButton onClick={handleClose}>
+            </CloseButton>
+        </Modal.Header>
+        <Modal.Body>
+            <AddForm onHide={()=> setShow(false)} addData={(newData) => setListData(arr => [...arr, newData])}/>
+        </Modal.Body>
+    </Modal>
+```
+```js
+//addForm.js
+    <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+            <Form.Label>內容</Form.Label>
+            <Form.Control value={note} onChange={(e) => setNote(e.target.value)} type="text" placeholder="輸入欲記事之內容(必填)" required></Form.Control>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>日期</Form.Label>
+                <Form.Control value={date} onChange={(e) => setDate(e.target.value)} type="date"></Form.Control>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>時間</Form.Label>
+                <Form.Control value={time} onChange={(e) => setTime(e.target.value)} type="time"></Form.Control>
+        </Form.Group>
+            <Button className="float-end" variant="primary" type="submit">新建</Button>
+    </Form>
+```
