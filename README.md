@@ -2,11 +2,11 @@
 
 ## To-do list首頁
 
-![GITHUB](https://raw.githubusercontent.com/willy199710/React_todolist/main/picture/To-do-list.PNG,"首頁")
+![GITHUB](https://raw.githubusercontent.com/willy199710/React_todolist/main/picture/To-do-list.PNG)
 
 ## 新增內容
 
-![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/add_item.PNG,"新增")
+![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/add_item.PNG)
 
 使用 React.Modal 做彈出式視窗，並以useState hook 控制 Modal 的顯示開關
 
