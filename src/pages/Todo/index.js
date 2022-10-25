@@ -9,6 +9,7 @@ const Todo = () => {
     const [listData, setListData] = useState([]);
     const [show, setShow] = useState(false);
 
+
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
@@ -19,10 +20,7 @@ const Todo = () => {
             <div className='item'><Button onClick={handleShow} variant="success">新增新內容</Button></div>
         </div>
         <div>
-            <List listData={listData} />
-        </div>
-        <div>
-            
+            <List listData={listData}/>
         </div>
 
         <Modal show = {show}>

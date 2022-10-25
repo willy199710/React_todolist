@@ -8,7 +8,7 @@ const List = ({ listData }) => {
       <div className="list">
         {listData.map((item) => {
           const { id, note, date, time } = item;
-          return <Item id={id} note={note} date={date} time={time}/>;
+          return <Item id={id} note={note} date={date} time={time} listData={listData}/>;
         })}
       </div>
     );
