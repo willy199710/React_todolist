@@ -11,17 +11,16 @@ const EditForm = ({onHide, content, editData}) => {
         e.preventDefault();
         onHide(); //關閉modal方法
 
-        for (let i = 0; i < editData.length; i++) {
-            let d_id = editData[i].id;
-            if (d_id === content.id){
-                editData[i].note = note;
-                editData[i].date = date;
-                editData[i].time = time;
-                break;
-            }
-        };
-
-    }
+        editData(function(prev){
+            return prev.map((item) => {
+                if (item.id === content.id) {
+                    item.note = note;
+                    item.date = date;
+                    item.time = time;
+                }
+            })
+        }
+    )}
 
 
     return (
