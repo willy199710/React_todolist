@@ -1,5 +1,9 @@
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 1rem;
-    background-color: #fff;
+    background-image: url(./pages/pic/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }

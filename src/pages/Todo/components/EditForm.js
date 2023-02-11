@@ -1,34 +1,26 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
-const EditForm = ({onHide, content, listData}) => {
+const EditForm = ({onHide, content, editData}) => {
     
     const [note, setNote] = useState(content.note);
     const [date, setDate] = useState(content.date);
     const [time, setTime] = useState(content.time);
 
-    function resetInput () {
-        setNote("");
-        setDate("");
-        setTime("");
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         onHide(); //關閉modal方法
 
-        for (let i = 0; i < listData.length; i++) {
-            let d_id = listData[i].id;
+        for (let i = 0; i < editData.length; i++) {
+            let d_id = editData[i].id;
             if (d_id === content.id){
-                listData[i].note = note;
-                listData[i].date = date;
-                listData[i].time = time;
+                editData[i].note = note;
+                editData[i].date = date;
+                editData[i].time = time;
                 break;
             }
         };
 
-
-        resetInput(); //清空Input內容
     }
 
 
