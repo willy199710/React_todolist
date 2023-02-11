@@ -2,11 +2,11 @@
 
 ## To-do list首頁
 
-![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/todolist.JPG)
+![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/to-do_List.JPG)
 
 ## 新增內容
 
-![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/addItem.gif)
+![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/add_Item.gif)
 
 使用 React.Modal 做彈出式視窗，並以 useState 控制 Modal 的顯示開關
 
@@ -48,7 +48,7 @@
 
 ## 刪除內容
 
-![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/delete.gif)
+![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/delete_Item.gif)
 
 
 將 setListData 改變 state 狀態的功能從 index.js -> List.js -> Item.js 供使用
