@@ -27,7 +27,7 @@ const AddForm = ({onHide, addData}) => {
 
         addData(data); //加入List的資料集
 
-
+        
         resetInput(); //清空Input內容
     }
 

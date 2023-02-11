@@ -59,10 +59,6 @@
     background-color: #99ccff;
 }
 
-button {
-    float: right;
-}
-
 .list-item button {
     margin-right: 5px;
 }
@@ -78,4 +74,16 @@ button {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+}
+
+Button {
+    float: right;
+    margin-left: 3px;
+}
+
+.itemRow {
+    display: flex;
+    border: solid 2px;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }

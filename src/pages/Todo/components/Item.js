@@ -1,9 +1,13 @@
-import { useState } from "react";
-import { Modal, Button, CloseButton } from 'react-bootstrap';
-import EditForm from "./EditForm";
+import { useState } from 'react';
+import { Modal, Button, CloseButton, Collapse } from 'react-bootstrap';
+import { BsFillTrashFill } from 'react-icons/bs';
+import { FaClipboardList } from 'react-icons/fa';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import EditForm from './EditForm';
 
-
-const Item = ({ id, note, date, time, listData }) => {
+const Item = ({ id, note, date, time, changeData }) => {
 
   const content = {
     "id": id,
@@ -14,19 +18,27 @@ const Item = ({ id, note, date, time, listData }) => {
 
   const [editShow, setEditShow] = useState(false);
 
+  function deleteItem() {
+    changeData(function(prev){
+      return prev.filter(item => item.id !== id)
+    })
+  };
+
 
   return (
     <>
-    <div className="list-item">
-        <ul>
-          <li><h5>{note}</h5></li>
-          <li><h7>{`${date} ${time}`}</h7></li>
-        </ul>
-        <div className="list-button">
-          <Button variant="success" onClick={() => setEditShow(true)}>修改</Button>
-          <Button variant="danger">刪除</Button>
-        </div>
-    </div>
+    <Container fluid>
+        <Row className="itemRow">
+          <Col>
+            <h5>{note}</h5>
+            <h7>{`${date} ${time}`}</h7>
+          </Col>
+          <Col className="p-2">
+            <Button size="lg" variant="danger" onClick={deleteItem}><BsFillTrashFill /></Button>
+            <Button size="lg" variant="success" onClick={() => setEditShow(true)}><FaClipboardList /></Button>
+          </Col>
+        </Row>
+    </Container>
 
 
     <Modal show = {editShow}>
@@ -38,7 +50,7 @@ const Item = ({ id, note, date, time, listData }) => {
                 </CloseButton>
             </Modal.Header>
             <Modal.Body>
-                <EditForm onHide={()=> setEditShow(false)} content = {content} listData = {listData}/>
+                <EditForm onHide={()=> setEditShow(false)} content = {content} editData = {changeData}></EditForm>
             </Modal.Body>
         </Modal>
     </>

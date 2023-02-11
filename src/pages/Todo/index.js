@@ -4,14 +4,19 @@ import AddForm from './components/AddForm';
 import List from './components/List';
 import './index.css';
 
+
 const Todo = () => {
 
-    const [listData, setListData] = useState([]);
+    const fakeItemData = require('./data/fakeItemData.json');
+
+    const [listData, setListData] = useState(fakeItemData.fakeList);
     const [show, setShow] = useState(false);
 
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
+
+    console.log(listData);
 
     return (
         <>
@@ -20,9 +25,11 @@ const Todo = () => {
             <div className='item'><Button onClick={handleShow} variant="success">新增新內容</Button></div>
         </div>
         <div>
-            <List listData={listData}/>
+            <List listData={listData} changeData={setListData}/>
         </div>
 
+
+        
         <Modal show = {show}>
             <Modal.Header>
                 <Modal.Title>
