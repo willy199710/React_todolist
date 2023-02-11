@@ -2,7 +2,7 @@
 
 ## To-do list首頁
 
-![GITHUB](https://raw.githubusercontent.com/willy199710/React_todolist/main/picture/To-do-list.PNG)
+![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/todolist.JPG)
 
 ## 新增內容
 
