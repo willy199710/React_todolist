@@ -16,8 +16,6 @@ const Todo = () => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    console.log(listData);
-
     return (
         <>
         <div className='todoList'>

@@ -30,8 +30,8 @@ const Item = ({ id, note, date, time, changeData }) => {
     <Container fluid>
         <Row className="itemRow">
           <Col>
-            <h5>{note}</h5>
-            <h7>{`${date} ${time}`}</h7>
+            <h3>{note}</h3>
+            <h6>{`${date} ${time}`}</h6>
           </Col>
           <Col className="p-2">
             <Button size="lg" variant="danger" onClick={deleteItem}><BsFillTrashFill /></Button>

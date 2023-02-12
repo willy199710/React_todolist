@@ -18,6 +18,7 @@ const EditForm = ({onHide, content, editData}) => {
                     item.date = date;
                     item.time = time;
                 }
+                return item;
             })
         }
     )}
