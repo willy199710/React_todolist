@@ -11,6 +11,7 @@ const EditForm = ({onHide, content, editData}) => {
         e.preventDefault();
         onHide(); //關閉modal方法
 
+        //找到需修改記事之id，並進行修改
         editData(function(prev){
             return prev.map((item) => {
                 if (item.id === content.id) {
