@@ -127,7 +127,7 @@ return <Item id={id} note={note} date={date} time={time} changeData={changeData}
 
 ![GITHUB](https://github.com/willy199710/React_todolist/blob/main/picture/edit_Item.gif)
 
-與刪除物件內容相同，將 setState 函數引導至 EditForm.js 供使用。
+與刪除物件內容相同，將 setState 函數引導至 EditForm.js 供使用。 <br>
 與新增內容相同，使用 Modal 做出彈出式輸入視窗，美化且便於使用。
 
 ```js
